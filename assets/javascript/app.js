@@ -45,8 +45,7 @@ var game = {
       game.timeOut();
 
       setTimeout(function() {
-        // reset highlighted answer
-        $("#answers").children().css("background-color", "#272b30");
+        $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
 
         // go to next question
         game.questionBank.currentQuestion++;
@@ -54,7 +53,7 @@ var game = {
         if (game.answeredQuestions <= game.totalQuestions) {
           game.start();
         }
-      }, 5000);
+      }, 4000);
     }
   },
 
@@ -87,7 +86,7 @@ var game = {
     let arr = ['A', 'B', 'C', 'D'];
     for (let i = 0; i < 4; i++) {
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
-        $("#answer-" + arr[i].toLowerCase()).css("background-color", "#5ce");
+        $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered")
       }
     }
   },
@@ -135,12 +134,23 @@ var game = {
       $("#question").html("<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]
         + '</h2><br/><img src="./assets/images/facepalm.gif"/>');
 
-      // Update score
-      game.incorrectAnswers++;
-      game.answeredQuestions++;
-
-      // go to next question
+      // Highlight the correct answer
+      let arr = ['A', 'B', 'C', 'D'];
+      for (let i = 0; i < 4; i++) {
+        if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+          $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+        }
+      }
+      
       setTimeout(function() {
+        // reset highlighted answer
+        $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+
+        // Update score
+        game.incorrectAnswers++;
+        game.answeredQuestions++;
+
+        // go to next question
         game.questionBank.currentQuestion++;
         
         if (game.answeredQuestions < game.totalQuestions) {
