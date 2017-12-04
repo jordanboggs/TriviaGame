@@ -17,9 +17,9 @@
 }
 
 #answers div:hover {
-  background-color: #f37;
+  background-color: #5ce;
 }
 
 #answers div:active {
-  background-color: #fff;
+  background-color: #f67;
 }

@@ -18,7 +18,7 @@ var game = {
 
   start: function() {
     // Start the timer
-    game.time = 30;
+    game.time = 5;
     $("#timer").text(game.timeConverter(game.time));
     game.intervalId = setInterval(game.count, 1000);
 
@@ -38,18 +38,23 @@ var game = {
       // Display time in #timer
       $("#timer").text(currentTime);
     }
-    else if (time === 0) {
+    else if (game.time === 0) {
       clearInterval(game.intervalId);       
 
       // Player loses this round
       game.timeOut();
 
-      // go to next question
-      game.questionBank.currentQuestion++;
+      setTimeout(function() {
+        // reset highlighted answer
+        $("#answers").children().css("background-color", "#272b30");
+
+        // go to next question
+        game.questionBank.currentQuestion++;
       
-      if (game.answeredQuestions <= game.totalQuestions) {
-        game.start();
-      }
+        if (game.answeredQuestions <= game.totalQuestions) {
+          game.start();
+        }
+      }, 5000);
     }
   },
 
@@ -79,6 +84,12 @@ var game = {
     $("#question").text("Sorry, time's up!");
     
     // Highlight the correct answer
+    let arr = ['A', 'B', 'C', 'D'];
+    for (let i = 0; i < 4; i++) {
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+        $("#answer-" + arr[i].toLowerCase()).css("background-color", "#5ce");
+      }
+    }
   },
 
   displayQuestion: function() {
@@ -97,8 +108,6 @@ var game = {
 
   check: function(pick) {
     clearInterval(game.intervalId);
-
-    console.log("Current question:",game.questionBank.currentQuestion,"User pick",pick);
 
     // if answer is correct
     if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + pick]["correct"] === true) {
@@ -142,10 +151,6 @@ var game = {
         }
       }, 4000);
     }
-
-    console.log("Correct answers:",game.correctAnswers,
-                "Incorrect answers:",game.incorrectAnswers,
-                "Next question:",game.questionBank.currentQuestion);
   },
 
   questionBank: {
