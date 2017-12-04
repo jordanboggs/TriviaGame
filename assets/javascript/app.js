@@ -420,7 +420,7 @@ var game = {
       // Let's restart the show
       game.start();
       $("#timer").show();
-      $("answers").show();
+      $("#answers").show();
     });
   } // End game.end()
 };
