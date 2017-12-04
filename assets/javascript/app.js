@@ -49,13 +49,15 @@ var game = {
       $("#timer").text(currentTime);
     }
     else if (time === 0) {
+      clearInterval(game.start.intervalId);       
+
       // Player loses this round
       game.timeOut();
 
       // go to next question
       game.questionBank.currentQuestion++;
       
-      if (game.questionBank.currentQuestion <= 5) {
+      if (game.answeredQuestions <= game.totalQuestions) {
         game.start();
       }
     }
@@ -76,7 +78,6 @@ var game = {
     }
 
     else if (minutes < 10) {
-      clearInterval(game.start.intervalId); 
       minutes = "0" + minutes;
     }
 
@@ -114,6 +115,15 @@ var game = {
         // Update score
         game.correctAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       } else {
         // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
@@ -121,6 +131,15 @@ var game = {
         // Update score
         game.incorrectAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       }
     }
     else if (pick ==="b") {
@@ -132,6 +151,15 @@ var game = {
         // Update score
         game.correctAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       } else {
         // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
@@ -139,6 +167,15 @@ var game = {
         // Update score
         game.incorrectAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       }      
     }
     else if (pick ==="c") {
@@ -150,6 +187,15 @@ var game = {
         // Update score
         game.correctAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       } else {
         // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
@@ -157,6 +203,15 @@ var game = {
         // Update score
         game.incorrectAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       }      
     }
     else if (pick ==="d") {
@@ -168,6 +223,15 @@ var game = {
         // Update score
         game.correctAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       } else {
         // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
@@ -175,6 +239,15 @@ var game = {
         // Update score
         game.incorrectAnswers++;
         game.answeredQuestions++;
+
+        // go to next question
+        setTimeout(function() {
+          game.questionBank.currentQuestion++;
+          
+          if (game.answeredQuestions <= game.totalQuestions) {
+            game.start();
+          }
+        }, 2000);
       }      
     }
   },
@@ -204,21 +277,21 @@ var game = {
     },
 
     question2: {
-      text: "",
+      text: "test",
       answerA: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerB: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerC: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerD: {
-        text: "",
+        text: "test",
         correct: false
       },
     },

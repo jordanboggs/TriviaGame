@@ -2,6 +2,24 @@
   display: none;
 }
 
+#gameboard {
+  font-size: 18px;
+}
+
+#question {
+  font-weight: bold;  
+}
+
 #answers div {
-  
+  margin: 10px;
+  padding: 5px;
+  border: solid 1px #ccc;
+}
+
+#answers div:hover {
+  background-color: #f37;
+}
+
+#answers div:active {
+  background-color: #fff;
 }
