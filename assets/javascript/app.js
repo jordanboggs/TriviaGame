@@ -119,11 +119,12 @@ var game = {
         else {
           game.end();
         }
-      }, 2000);
+      }, 4000);
     } 
     else {
       // Display feedback
-      $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+      $("#question").html("<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]
+        + '</h2><br/><img src="./assets/images/facepalm.gif"/>');
 
       // Update score
       game.incorrectAnswers++;
@@ -139,7 +140,7 @@ var game = {
         else {
           game.end();
         }
-      }, 2000);
+      }, 4000);
     }
 
     console.log("Correct answers:",game.correctAnswers,
@@ -316,7 +317,6 @@ $("#answer-d").click(function(){game.check("D")});
  * TO DO
  * ----------
  * FEATURES
- * * Add .gifs to wrong answers
  * * Highlight correct answer during timeout
  * * Highlight correct answer after wrong selection
  */
