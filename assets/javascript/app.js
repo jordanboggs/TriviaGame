@@ -19,8 +19,17 @@ var game = {
   incorrectAnswers: 0,
 
   start: function() {
+    // Start the timer
     intervalId = setInterval(game.count, 1000);
+
+    // Display the question and answers
     game.displayQuestion();
+    
+    // Wait for a selection from user
+    $("#answer-a").click(game.check("a"));
+    $("#answer-b").click(game.check("b"));
+    $("#answer-c").click(game.check("c"));
+    $("#answer-d").click(game.check("d"));
   },
 
   count: function() {
@@ -90,6 +99,17 @@ var game = {
     $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["text"]);
   },
 
+  check: function(pick) {
+    if (sel === "a") {
+      // if answer is correct
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"]) {
+        $("#question").text("Correct!");
+      } else {
+        $("#question").text(game.questionBank.feedback);
+      }
+    }
+  },
+
   questionBank: {
     currentQuestion: 1,
 
@@ -97,7 +117,7 @@ var game = {
       text: "Which ship was Captain Jean-Luc Picard the captain of?",
       answerA: {
         text: "USS Enterprise-A",
-        correct: false
+        correct: false,
       },
       answerB: {
         text: "USS Enterprise-B",
@@ -111,6 +131,7 @@ var game = {
         text: "USS Enterprise-D",
         correct: true
       },
+      feedback: "Sorry, the correct answer was USS Enterprise-D"
     },
 
     question2: {
