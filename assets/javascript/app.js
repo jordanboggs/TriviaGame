@@ -296,7 +296,8 @@ var game = {
         text: "USS Enterprise-D",
         correct: true
       },
-      feedback: "Sorry, the correct answer was USS Enterprise-D"
+      feedback: "Sorry, the correct answer was USS Enterprise-D",
+      gif: "./assets/images/picard.gif"
     },
 
     question2: {
@@ -317,6 +318,8 @@ var game = {
         text: "Vore",
         correct: false
       },
+      feedback: "Sorry, the correct answer was Lore.",
+      gif: "./assets/images/lore.gif"
     },
 
     question3: {
@@ -336,7 +339,9 @@ var game = {
       answerD: {
         text: "Jean-Luc Picard",
         correct: false
-      },
+      },,
+      feedback: "Sorry, the correct answer was Worf.",
+      gif: "./assets/images/worf.gif"
     },
 
     question4: {
@@ -357,6 +362,8 @@ var game = {
         text: "The Continuum",
         correct: false
       },
+      feedback: "Sorry, the correct answer was Q.",
+      gif: ".assets/images/q.gif"
     },
 
     question5: {
@@ -376,7 +383,9 @@ var game = {
       answerD: {
         text: "The Holodeck",
         correct: true
-      },
+      }, 
+      feedback: "Sorry, the correct answer was The Holodeck",
+      gif: "./assets/images/holodeck.gif"
     },
   },
 
