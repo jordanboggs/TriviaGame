@@ -45,7 +45,13 @@ var game = {
       game.timeOut();
 
       setTimeout(function() {
-        $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+        // Reset highlight
+        let arr = ['A', 'B', 'C', 'D'];
+        for (let i = 0; i < 4; i++) {
+          if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+            $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+          }
+        }
 
         // go to next question
         game.questionBank.currentQuestion++;
@@ -144,7 +150,12 @@ var game = {
       
       setTimeout(function() {
         // reset highlighted answer
-        $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+        let arr = ['A', 'B', 'C', 'D'];
+        for (let i = 0; i < 4; i++) {
+          if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+            $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
+          }
+        }
 
         // Update score
         game.incorrectAnswers++;
