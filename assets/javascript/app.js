@@ -14,20 +14,30 @@ $("#start").click(function() {
 var game = {
   time: 30,
 
+  correctAnswers: 0,
+  
+  incorrectAnswers: 0,
+
   start: function() {
     intervalId = setInterval(game.count, 1000);
     clockRunning = true;
   },
 
   count: function() {
-    // Decrement time by 1
-    game.time--;
+    if (game.time > 0) {
+      // Decrement time by 1
+      game.time--;
+      
+      // Get the current time and format it
+      let currentTime = game.timeConverter(game.time);
 
-    // Get the current time and format it
-    let currentTime = game.timeConverter(game.time);
-
-    // Display time in #timer
-    $("#timer").text(currentTime);
+      // Display time in #timer
+      $("#timer").text(currentTime);
+    }
+    else if (time === 0) {
+      // Player loses this round
+      game.timeOut();
+    }
   },
 
   timeConverter: function(t) {
@@ -49,5 +59,117 @@ var game = {
     }
 
     return minutes + ":" + seconds;
+  },
+
+  timeOut: function() {
+    // Time's up message
+    $("#question").text("Sorry, time's up!");
+    
+    // Highlight the correct answer
+  },
+
+  questionBank: {
+    question1: {
+      text: "",
+      answerA: {
+        text: "",
+        correct: false
+      },
+      answerB: {
+        text: "",
+        correct: false
+      },
+      answerC: {
+        text: "",
+        correct: false
+      },
+      answerD: {
+        text: "",
+        correct: false
+      },
+    },
+    question2: {
+      text: "",
+      answerA: {
+        text: "",
+        correct: false
+      },
+      answerB: {
+        text: "",
+        correct: false
+      },
+      answerC: {
+        text: "",
+        correct: false
+      },
+      answerD: {
+        text: "",
+        correct: false
+      },
+    },
+    question3: {
+      text: "",
+      answerA: {
+        text: "",
+        correct: false
+      },
+      answerB: {
+        text: "",
+        correct: false
+      },
+      answerC: {
+        text: "",
+        correct: false
+      },
+      answerD: {
+        text: "",
+        correct: false
+      },
+    },
+    question4: {
+      text: "",
+      answerA: {
+        text: "",
+        correct: false
+      },
+      answerB: {
+        text: "",
+        correct: false
+      },
+      answerC: {
+        text: "",
+        correct: false
+      },
+      answerD: {
+        text: "",
+        correct: false
+      },
+    },
+    question5: {
+      text: "",
+      answerA: {
+        text: "",
+        correct: false
+      },
+      answerB: {
+        text: "",
+        correct: false
+      },
+      answerC: {
+        text: "",
+        correct: false
+      },
+      answerD: {
+        text: "",
+        correct: false
+      },
+    },
   }
 };
+
+/*
+ * TO DO
+ * ----------
+ * 1. Build objects for each question
+ * 2. Method for displaying correct answers
+ */
