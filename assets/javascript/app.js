@@ -18,11 +18,16 @@ var game = {
   
   incorrectAnswers: 0,
 
+  answeredQuestions: 0,
+
+  totalQuestions: 5,
+
   start: function() {
     // Start the timer
     var intervalId = setInterval(game.count, 1000);
 
-    // Display the question and answers
+    // Display the question and answers, if there are still
+    // questions left
     game.displayQuestion();
     
     // Wait for a selection from user
@@ -103,9 +108,19 @@ var game = {
     if (pick === "a") {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
+        // Display feedback
         $("#question").text("Correct!");
+
+        // Update score
+        game.correctAnswers++;
+        game.answeredQuestions++;
       } else {
+        // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+
+        // Update score
+        game.incorrectAnswers++;
+        game.answeredQuestions++;
       }
     }
   },
