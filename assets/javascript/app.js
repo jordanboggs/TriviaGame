@@ -1,6 +1,6 @@
 /*
  * S T A R   T R E K   T R I V I A
- * Jordan Boggs - Dec 3 2017 
+ * Jordan Boggs - Dec, 2017 
  */
 
 $("#start").click(function() {
@@ -135,7 +135,8 @@ var game = {
             game.end();
           }
         }, 2000);
-      } else {
+      } 
+      else {
         // Display feedback
         $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
 
@@ -149,6 +150,9 @@ var game = {
           
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
+          }
+          else {
+            game.end();
           }
         }, 2000);
       }
@@ -170,6 +174,9 @@ var game = {
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
           }
+          else {
+            game.end();
+          }
         }, 2000);
       } else {
         // Display feedback
@@ -185,6 +192,9 @@ var game = {
           
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
+          }
+          else {
+            game.end();
           }
         }, 2000);
       }      
@@ -206,6 +216,9 @@ var game = {
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
           }
+          else {
+            game.end();
+          }
         }, 2000);
       } else {
         // Display feedback
@@ -221,6 +234,9 @@ var game = {
           
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
+          }
+          else {
+            game.end();
           }
         }, 2000);
       }      
@@ -242,6 +258,9 @@ var game = {
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
           }
+          else {
+            game.end();
+          }
         }, 2000);
       } else {
         // Display feedback
@@ -258,9 +277,16 @@ var game = {
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
           }
+          else {
+            game.end();
+          }
         }, 2000);
       }      
     }
+    // Log out what happened
+    console.log("Correct answers:",game.correctAnswers,
+                "Incorrect answers:",game.incorrectAnswers,
+                "Next question:",game.questionBank.currentQuestion);
   },
 
   questionBank: {
