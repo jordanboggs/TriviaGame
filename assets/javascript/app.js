@@ -100,7 +100,8 @@ var game = {
   },
 
   check: function(pick) {
-    if (sel === "a") {
+    console.log(pick);
+    if (this.pick === "a") {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"]) {
         $("#question").text("Correct!");
