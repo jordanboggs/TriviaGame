@@ -20,16 +20,16 @@ var game = {
 
   start: function() {
     // Start the timer
-    intervalId = setInterval(game.count, 1000);
+    var intervalId = setInterval(game.count, 1000);
 
     // Display the question and answers
     game.displayQuestion();
     
     // Wait for a selection from user
-    $("#answer-a").click(game.check("a"));
-    $("#answer-b").click(game.check("b"));
-    $("#answer-c").click(game.check("c"));
-    $("#answer-d").click(game.check("d"));
+    $("#answer-a").click(function(){game.check("a")});
+    $("#answer-b").click(function(){game.check("b")});
+    $("#answer-c").click(function(){game.check("c")});
+    $("#answer-d").click(function(){game.check("d")});
   },
 
   count: function() {
@@ -100,13 +100,12 @@ var game = {
   },
 
   check: function(pick) {
-    console.log(pick);
-    if (this.pick === "a") {
+    if (pick === "a") {
       // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"]) {
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
         $("#question").text("Correct!");
       } else {
-        $("#question").text(game.questionBank.feedback);
+        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
       }
     }
   },
