@@ -403,6 +403,9 @@ var game = {
     else {
       $("#question").after('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
     }
+
+    // Add restart button
+    $("#question").after('<br/><button id="restart" class="btn btn-info btn-lg">Play again!</button>');
   }
 };
 
@@ -419,6 +422,20 @@ $("#answer-a").click(function(){game.check("a")});
 $("#answer-b").click(function(){game.check("b")});
 $("#answer-c").click(function(){game.check("c")});
 $("#answer-d").click(function(){game.check("d")});
+
+$("#restart").click(function() {
+  $("#start-screen").hide();
+  $("#gameboard").show();
+
+  // Reset variables
+  game.correctAnswers = 0;
+  game.incorrectAnswers = 0;
+  game.answeredQuestions = 0;
+  game.intervalId = "";
+
+  // Let's restart the show
+  game.start();
+});
 
 /*
  * TO DO
