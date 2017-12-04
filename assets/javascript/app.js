@@ -22,9 +22,13 @@ var game = {
 
   totalQuestions: 5,
 
+  intervalId: "",
+
   start: function() {
     // Start the timer
-    var intervalId = setInterval(game.count, 1000);
+    game.time = 30;
+    $("#timer").text(game.timeConverter(game.time));
+    game.intervalId = setInterval(game.count, 1000);
 
     // Display the question and answers, if there are still
     // questions left
@@ -49,7 +53,7 @@ var game = {
       $("#timer").text(currentTime);
     }
     else if (time === 0) {
-      clearInterval(game.start.intervalId);       
+      clearInterval(game.intervalId);       
 
       // Player loses this round
       game.timeOut();
@@ -106,6 +110,8 @@ var game = {
   },
 
   check: function(pick) {
+    clearInterval(game.intervalId);
+
     if (pick === "a") {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
