@@ -112,6 +112,8 @@ var game = {
   check: function(pick) {
     clearInterval(game.intervalId);
 
+    console.log("Current question:",game.questionBank.currentQuestion,"User pick",pick);
+
     if (pick === "a") {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
@@ -297,7 +299,7 @@ var game = {
       },
       answerC: {
         text: "test",
-        correct: false
+        correct: true
       },
       answerD: {
         text: "test",
@@ -306,61 +308,61 @@ var game = {
     },
 
     question3: {
-      text: "",
+      text: "test",
       answerA: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerB: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerC: {
-        text: "",
-        correct: false
+        text: "test",
+        correct: true
       },
       answerD: {
-        text: "",
+        text: "test",
         correct: false
       },
     },
 
     question4: {
-      text: "",
+      text: "test",
       answerA: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerB: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerC: {
-        text: "",
-        correct: false
+        text: "test",
+        correct: true
       },
       answerD: {
-        text: "",
+        text: "test",
         correct: false
       },
     },
 
     question5: {
-      text: "",
+      text: "test",
       answerA: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerB: {
-        text: "",
+        text: "test",
         correct: false
       },
       answerC: {
-        text: "",
-        correct: false
+        text: "test",
+        correct: true
       },
       answerD: {
-        text: "",
+        text: "test",
         correct: false
       },
     },
@@ -378,6 +380,6 @@ var game = {
 /*
  * TO DO
  * ----------
- * 1. Build objects for each question
- * 2. Method for displaying correct answers
+ * FIX BUG
+ * Questions advance as follows: 1, 2, 4, 8
  */
