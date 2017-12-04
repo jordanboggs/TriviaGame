@@ -18,7 +18,7 @@ var game = {
 
   start: function() {
     // Start the timer
-    game.time = 5;
+    game.time = 30;
     $("#timer").text(game.timeConverter(game.time));
     game.intervalId = setInterval(game.count, 1000);
 
