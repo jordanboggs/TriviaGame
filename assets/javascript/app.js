@@ -104,7 +104,7 @@ var game = {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
         // Display feedback
-        $("#question").text("Correct!");
+        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
         // Update score
         game.correctAnswers++;
@@ -147,7 +147,7 @@ var game = {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerB"]["correct"] === true) {
         // Display feedback
-        $("#question").text("Correct!");
+        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
         // Update score
         game.correctAnswers++;
@@ -189,7 +189,7 @@ var game = {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["correct"] === true) {
         // Display feedback
-        $("#question").text("Correct!");
+        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
         // Update score
         game.correctAnswers++;
@@ -231,7 +231,7 @@ var game = {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["correct"] === true) {
         // Display feedback
-        $("#question").text("Correct!");
+        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
         // Update score
         game.correctAnswers++;
@@ -339,7 +339,7 @@ var game = {
       answerD: {
         text: "Jean-Luc Picard",
         correct: false
-      },,
+      },
       feedback: "Sorry, the correct answer was Worf.",
       gif: "./assets/images/worf.gif"
     },
@@ -363,7 +363,7 @@ var game = {
         correct: false
       },
       feedback: "Sorry, the correct answer was Q.",
-      gif: ".assets/images/q.gif"
+      gif: "./assets/images/q.gif"
     },
 
     question5: {
