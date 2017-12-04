@@ -37,6 +37,13 @@ var game = {
     else if (time === 0) {
       // Player loses this round
       game.timeOut();
+
+      // go to next question
+      game.questionBank.currentQuestion++;
+      
+      if (game.questionBank.currentQuestion <= 5) {
+        game.start();
+      }
     }
   },
 
@@ -69,7 +76,19 @@ var game = {
     // Highlight the correct answer
   },
 
-  
+  displayQuestion: function() {
+    // Display the question based on what the currentQuestion
+    // counter is
+    $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["text"]);
+
+    $("#answer-a").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["text"]);
+
+    $("#answer-b").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerB"]["text"]);
+
+    $("#answer-c").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["text"]);
+
+    $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD "]["text"]);
+  },
 
   questionBank: {
     currentQuestion: 1,
