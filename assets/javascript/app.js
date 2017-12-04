@@ -338,3 +338,10 @@ $("#answer-a").click(function(){game.check("A")});
 $("#answer-b").click(function(){game.check("B")});
 $("#answer-c").click(function(){game.check("C")});
 $("#answer-d").click(function(){game.check("D")});
+
+/*
+ * TO DO
+ * -----
+ * Current Bugs
+ * * Win/lose screen doesn't appear, it tries to pull another question
+ */
