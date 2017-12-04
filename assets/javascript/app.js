@@ -334,7 +334,7 @@ var game = {
         correct: false
       },
       answerD: {
-        text: "Jean-Luc Piccard",
+        text: "Jean-Luc Picard",
         correct: false
       },
     },
