@@ -20,7 +20,7 @@ var game = {
 
   start: function() {
     intervalId = setInterval(game.count, 1000);
-    clockRunning = true;
+    game.displayQuestion();
   },
 
   count: function() {
@@ -55,6 +55,7 @@ var game = {
     }
 
     else if (minutes < 10) {
+      clearInterval(game.start.intervalId); 
       minutes = "0" + minutes;
     }
 
@@ -68,26 +69,31 @@ var game = {
     // Highlight the correct answer
   },
 
+  
+
   questionBank: {
+    currentQuestion: 1,
+
     question1: {
-      text: "",
+      text: "Which ship was Captain Jean-Luc Picard the captain of?",
       answerA: {
-        text: "",
+        text: "USS Enterprise-A",
         correct: false
       },
       answerB: {
-        text: "",
+        text: "USS Enterprise-B",
         correct: false
       },
       answerC: {
-        text: "",
+        text: "USS Enterprise-C",
         correct: false
       },
       answerD: {
-        text: "",
-        correct: false
+        text: "USS Enterprise-D",
+        correct: true
       },
     },
+
     question2: {
       text: "",
       answerA: {
@@ -107,6 +113,7 @@ var game = {
         correct: false
       },
     },
+
     question3: {
       text: "",
       answerA: {
@@ -126,6 +133,7 @@ var game = {
         correct: false
       },
     },
+
     question4: {
       text: "",
       answerA: {
@@ -145,6 +153,7 @@ var game = {
         correct: false
       },
     },
+
     question5: {
       text: "",
       answerA: {
