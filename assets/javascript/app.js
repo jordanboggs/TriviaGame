@@ -3,14 +3,6 @@
  * Jordan Boggs - Dec, 2017 
  */
 
-$("#start").click(function() {
-  $("#start-screen").hide();
-  $("#gameboard").show();
-
-  // Let's start the show
-  game.start();
-});
-
 var game = {
   time: 30,
 
@@ -397,6 +389,14 @@ var game = {
   }
 };
 
+$("#start").click(function() {
+  $("#start-screen").hide();
+  $("#gameboard").show();
+
+  // Let's start the show
+  game.start();
+});
+
 // Wait for a selection from user
 $("#answer-a").click(function(){game.check("a")});
 $("#answer-b").click(function(){game.check("b")});
@@ -406,6 +406,9 @@ $("#answer-d").click(function(){game.check("d")});
 /*
  * TO DO
  * ----------
- * FIX BUG
- * Questions advance as follows: 1, 2, 4, 8
+ * FEATURES
+ * * Add .gifs to feedback
+ * * Highlight correct answer during timeout
+ * * Highlight correct answer after wrong selection
+ * * Add restart button when game is done
  */
