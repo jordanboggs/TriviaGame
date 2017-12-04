@@ -444,8 +444,7 @@ $("#answer-d").click(function(){game.check("d")});
  * TO DO
  * ----------
  * FEATURES
- * * Add .gifs to feedback
+ * * Add .gifs to wrong answers
  * * Highlight correct answer during timeout
  * * Highlight correct answer after wrong selection
- * * Add restart button when game is done
  */
