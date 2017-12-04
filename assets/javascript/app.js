@@ -392,21 +392,37 @@ var game = {
   end: function() {
     $("#timer").hide();
     $("#answers").hide();
-    $("#question").html("<h2>Here's how you did!</h2>" + 
-      "<p>Correct answers: " + game.correctAnswers + "</p>" +
-      "<p>Incorrect answers: " + game.incorrectAnswers + "</p>");
     
     // Embed a video
     if (game.correctAnswers > game.incorrectAnswers) {
-      $("#question").after('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+      $("#question").html("<h2>Here's how you did!</h2>" + 
+      "<p>Correct answers: " + game.correctAnswers + "</p>" +
+      "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
+      '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
+      '<p><button id="restart" class="btn btn-info btn-lg">Play again!</button></p>');
     }
     else {
-      $("#question").after('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+      $("#question").html("<h2>Here's how you did!</h2>" + 
+      "<p>Correct answers: " + game.correctAnswers + "</p>" +
+      "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
+      '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
+      '<p><button id="restart" class="btn btn-info btn-lg">Play again!</button></p>');
     }
 
-    // Add restart button
-    $("#question").after('<br/><button id="restart" class="btn btn-info btn-lg">Play again!</button>');
-  }
+    $("#restart").click(function() {
+      // Reset variables
+      game.correctAnswers = 0;
+      game.incorrectAnswers = 0;
+      game.answeredQuestions = 0;
+      game.intervalId = "";
+      game.questionBank.currentQuestion = 1;
+    
+      // Let's restart the show
+      game.start();
+      $("#timer").show();
+      $("answers").show();
+    });
+  } // End game.end()
 };
 
 $("#start").click(function() {
@@ -414,6 +430,7 @@ $("#start").click(function() {
   $("#gameboard").show();
 
   // Let's start the show
+
   game.start();
 });
 
@@ -422,20 +439,6 @@ $("#answer-a").click(function(){game.check("a")});
 $("#answer-b").click(function(){game.check("b")});
 $("#answer-c").click(function(){game.check("c")});
 $("#answer-d").click(function(){game.check("d")});
-
-$("#restart").click(function() {
-  $("#start-screen").hide();
-  $("#gameboard").show();
-
-  // Reset variables
-  game.correctAnswers = 0;
-  game.incorrectAnswers = 0;
-  game.answeredQuestions = 0;
-  game.intervalId = "";
-
-  // Let's restart the show
-  game.start();
-});
 
 /*
  * TO DO
