@@ -123,6 +123,60 @@ var game = {
         game.answeredQuestions++;
       }
     }
+    else if (pick ==="b") {
+      // if answer is correct
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerB"]["correct"] === true) {
+        // Display feedback
+        $("#question").text("Correct!");
+
+        // Update score
+        game.correctAnswers++;
+        game.answeredQuestions++;
+      } else {
+        // Display feedback
+        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+
+        // Update score
+        game.incorrectAnswers++;
+        game.answeredQuestions++;
+      }      
+    }
+    else if (pick ==="c") {
+      // if answer is correct
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["correct"] === true) {
+        // Display feedback
+        $("#question").text("Correct!");
+
+        // Update score
+        game.correctAnswers++;
+        game.answeredQuestions++;
+      } else {
+        // Display feedback
+        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+
+        // Update score
+        game.incorrectAnswers++;
+        game.answeredQuestions++;
+      }      
+    }
+    else if (pick ==="d") {
+      // if answer is correct
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["correct"] === true) {
+        // Display feedback
+        $("#question").text("Correct!");
+
+        // Update score
+        game.correctAnswers++;
+        game.answeredQuestions++;
+      } else {
+        // Display feedback
+        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+
+        // Update score
+        game.incorrectAnswers++;
+        game.answeredQuestions++;
+      }      
+    }
   },
 
   questionBank: {
