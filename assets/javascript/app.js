@@ -87,7 +87,7 @@ var game = {
 
     $("#answer-c").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["text"]);
 
-    $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD "]["text"]);
+    $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["text"]);
   },
 
   questionBank: {
