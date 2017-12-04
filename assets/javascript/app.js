@@ -128,6 +128,9 @@ var game = {
           
           if (game.answeredQuestions <= game.totalQuestions) {
             game.start();
+          } 
+          else {
+            game.end();
           }
         }, 2000);
       } else {
@@ -361,6 +364,14 @@ var game = {
         correct: false
       },
     },
+  },
+
+  end: function() {
+    $("#timer").hide();
+    $("#answers").hide();
+    $("#question").html("<h2>Here's how you did!</h2>" + 
+      "<p>Correct answers: " + game.correctAnswers + "</p>" +
+      "<p>Incorrect answers: " + game.incorrectAnswers + "</p>");
   }
 };
 
