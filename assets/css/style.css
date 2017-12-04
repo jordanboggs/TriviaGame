@@ -10,6 +10,10 @@
   font-weight: bold;  
 }
 
+#question img {
+  max-width: 240px;
+}
+
 #answers div {
   margin: 10px;
   padding: 5px;
