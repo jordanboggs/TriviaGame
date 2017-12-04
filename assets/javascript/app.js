@@ -100,176 +100,48 @@ var game = {
 
     console.log("Current question:",game.questionBank.currentQuestion,"User pick",pick);
 
-    if (pick === "a") {
-      // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["correct"] === true) {
-        // Display feedback
-        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
+    // if answer is correct
+    if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + pick]["correct"] === true) {
+      // Display feedback
+      $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
-        // Update score
-        game.correctAnswers++;
-        game.answeredQuestions++;
+      // Update score
+      game.correctAnswers++;
+      game.answeredQuestions++;
 
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          } 
-          else {
-            game.end();
-          }
-        }, 2000);
-      } 
-      else {
-        // Display feedback
-        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
+      // go to next question
+      setTimeout(function() {
+        game.questionBank.currentQuestion++;
+        
+        if (game.answeredQuestions < game.totalQuestions) {
+          game.start();
+        } 
+        else {
+          game.end();
+        }
+      }, 2000);
+    } 
+    else {
+      // Display feedback
+      $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
 
-        // Update score
-        game.incorrectAnswers++;
-        game.answeredQuestions++;
+      // Update score
+      game.incorrectAnswers++;
+      game.answeredQuestions++;
 
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      }
+      // go to next question
+      setTimeout(function() {
+        game.questionBank.currentQuestion++;
+        
+        if (game.answeredQuestions < game.totalQuestions) {
+          game.start();
+        }
+        else {
+          game.end();
+        }
+      }, 2000);
     }
-    else if (pick ==="b") {
-      // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerB"]["correct"] === true) {
-        // Display feedback
-        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
 
-        // Update score
-        game.correctAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      } else {
-        // Display feedback
-        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
-
-        // Update score
-        game.incorrectAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      }      
-    }
-    else if (pick ==="c") {
-      // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["correct"] === true) {
-        // Display feedback
-        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
-
-        // Update score
-        game.correctAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      } else {
-        // Display feedback
-        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
-
-        // Update score
-        game.incorrectAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      }      
-    }
-    else if (pick ==="d") {
-      // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["correct"] === true) {
-        // Display feedback
-        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
-
-        // Update score
-        game.correctAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      } else {
-        // Display feedback
-        $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]);
-
-        // Update score
-        game.incorrectAnswers++;
-        game.answeredQuestions++;
-
-        // go to next question
-        setTimeout(function() {
-          game.questionBank.currentQuestion++;
-          
-          if (game.answeredQuestions < game.totalQuestions) {
-            game.start();
-          }
-          else {
-            game.end();
-          }
-        }, 2000);
-      }      
-    }
-    // Log out what happened
     console.log("Correct answers:",game.correctAnswers,
                 "Incorrect answers:",game.incorrectAnswers,
                 "Next question:",game.questionBank.currentQuestion);
@@ -435,10 +307,10 @@ $("#start").click(function() {
 });
 
 // Wait for a selection from user
-$("#answer-a").click(function(){game.check("a")});
-$("#answer-b").click(function(){game.check("b")});
-$("#answer-c").click(function(){game.check("c")});
-$("#answer-d").click(function(){game.check("d")});
+$("#answer-a").click(function(){game.check("A")});
+$("#answer-b").click(function(){game.check("B")});
+$("#answer-c").click(function(){game.check("C")});
+$("#answer-d").click(function(){game.check("D")});
 
 /*
  * TO DO
