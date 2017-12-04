@@ -33,12 +33,6 @@ var game = {
     // Display the question and answers, if there are still
     // questions left
     game.displayQuestion();
-    
-    // Wait for a selection from user
-    $("#answer-a").click(function(){game.check("a")});
-    $("#answer-b").click(function(){game.check("b")});
-    $("#answer-c").click(function(){game.check("c")});
-    $("#answer-d").click(function(){game.check("d")});
   },
 
   count: function() {
@@ -128,7 +122,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           } 
           else {
@@ -148,7 +142,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -171,7 +165,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -190,7 +184,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -213,7 +207,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -232,7 +226,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -255,7 +249,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -274,7 +268,7 @@ var game = {
         setTimeout(function() {
           game.questionBank.currentQuestion++;
           
-          if (game.answeredQuestions <= game.totalQuestions) {
+          if (game.answeredQuestions < game.totalQuestions) {
             game.start();
           }
           else {
@@ -402,6 +396,12 @@ var game = {
       "<p>Incorrect answers: " + game.incorrectAnswers + "</p>");
   }
 };
+
+// Wait for a selection from user
+$("#answer-a").click(function(){game.check("a")});
+$("#answer-b").click(function(){game.check("b")});
+$("#answer-c").click(function(){game.check("c")});
+$("#answer-d").click(function(){game.check("d")});
 
 /*
  * TO DO
