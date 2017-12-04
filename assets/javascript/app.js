@@ -338,11 +338,3 @@ $("#answer-a").click(function(){game.check("A")});
 $("#answer-b").click(function(){game.check("B")});
 $("#answer-c").click(function(){game.check("C")});
 $("#answer-d").click(function(){game.check("D")});
-
-/*
- * TO DO
- * ----------
- * FEATURES
- * * Highlight correct answer during timeout
- * * Highlight correct answer after wrong selection
- */
