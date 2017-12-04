@@ -288,82 +288,82 @@ var game = {
     },
 
     question2: {
-      text: "test",
+      text: "What is the name of Data's older sibling?",
       answerA: {
-        text: "test",
+        text: "Soong Unit 1A",
         correct: false
       },
       answerB: {
-        text: "test",
+        text: "RAM",
         correct: false
       },
       answerC: {
-        text: "test",
+        text: "Lore",
         correct: true
       },
       answerD: {
-        text: "test",
+        text: "Vore",
         correct: false
       },
     },
 
     question3: {
-      text: "test",
+      text: "Which character has appeared in the most Star Trek episodes, across all series?",
       answerA: {
-        text: "test",
+        text: "Chief O'Brien",
         correct: false
       },
       answerB: {
-        text: "test",
-        correct: false
-      },
-      answerC: {
-        text: "test",
+        text: "Worf",
         correct: true
       },
+      answerC: {
+        text: "Spock",
+        correct: false
+      },
       answerD: {
-        text: "test",
+        text: "Jean-Luc Piccard",
         correct: false
       },
     },
 
     question4: {
-      text: "test",
+      text: "What is the name of the god-like being who first antagonizes the crew in the first episode of Star Trek: The Next Generation?",
       answerA: {
-        text: "test",
-        correct: false
+        text: "Q",
+        correct: true
       },
       answerB: {
-        text: "test",
+        text: "X",
         correct: false
       },
       answerC: {
-        text: "test",
-        correct: true
+        text: "The Joker",
+        correct: false
       },
       answerD: {
-        text: "test",
+        text: "The Continuum",
         correct: false
       },
     },
 
     question5: {
-      text: "test",
+      text: "What is the name of the room on the Enterprise that allows crewmembers to simulate different environments in 3D space?",
       answerA: {
-        text: "test",
+        text: "The Occulus",
         correct: false
       },
       answerB: {
-        text: "test",
+        text: "The Holochamber",
         correct: false
       },
       answerC: {
-        text: "test",
-        correct: true
+        text: "The Simulacrum",
+        correct: false
       },
       answerD: {
-        text: "test",
-        correct: false
+        text: "The Holodeck",
+        correct: true
       },
     },
   },
