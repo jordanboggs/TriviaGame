@@ -395,6 +395,14 @@ var game = {
     $("#question").html("<h2>Here's how you did!</h2>" + 
       "<p>Correct answers: " + game.correctAnswers + "</p>" +
       "<p>Incorrect answers: " + game.incorrectAnswers + "</p>");
+    
+    // Embed a video
+    if (game.correctAnswers > game.incorrectAnswers) {
+      $("#question").after('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+    }
+    else {
+      $("#question").after('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+    }
   }
 };
 
