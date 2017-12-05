@@ -25,7 +25,7 @@ var game = {
     // Display the question and answers, if there are still
     // questions left
     game.displayQuestion();
-  },
+  }, // End game.start()
 
   count: function() {
     if (game.time > 0) {
@@ -56,12 +56,12 @@ var game = {
         // go to next question
         game.questionBank.currentQuestion++;
       
-        if (game.answeredQuestions <= game.totalQuestions) {
+        if (game.answeredQuestions < game.totalQuestions) {
           game.start();
         }
       }, 4000);
     }
-  },
+  }, // End game.count()
 
   timeConverter: function(t) {
     // Takes the current time in seconds and converts it to
@@ -82,7 +82,7 @@ var game = {
     }
 
     return minutes + ":" + seconds;
-  },
+  }, // End game.timeConverter()
 
   timeOut: function() {
     // Time's up message
@@ -95,7 +95,11 @@ var game = {
         $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered")
       }
     }
-  },
+    
+    // Update score
+    game.correctAnswers++;
+    game.answeredQuestions++;
+  }, // End game.timeOut()
 
   displayQuestion: function() {
     // Display the question based on what the currentQuestion
@@ -109,7 +113,7 @@ var game = {
     $("#answer-c").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["text"]);
 
     $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["text"]);
-  },
+  }, // End game.displayQuestion()
 
   check: function(pick) {
     clearInterval(game.intervalId);
@@ -172,7 +176,7 @@ var game = {
         }
       }, 4000);
     }
-  },
+  }, // End game.check()
 
   questionBank: {
     currentQuestion: 1,
@@ -286,7 +290,7 @@ var game = {
       feedback: "Sorry, the correct answer was The Holodeck",
       gif: "./assets/images/holodeck.gif"
     },
-  },
+  }, // End game.questionBank
 
   end: function() {
     $("#timer").hide();
@@ -322,14 +326,13 @@ var game = {
       $("#answers").show();
     });
   } // End game.end()
-};
+}; // End game
 
 $("#start").click(function() {
   $("#start-screen").hide();
   $("#gameboard").show();
 
   // Let's start the show
-
   game.start();
 });
 
@@ -338,10 +341,3 @@ $("#answer-a").click(function(){game.check("A")});
 $("#answer-b").click(function(){game.check("B")});
 $("#answer-c").click(function(){game.check("C")});
 $("#answer-d").click(function(){game.check("D")});
-
-/*
- * TO DO
- * -----
- * Current Bugs
- * * Win/lose screen doesn't appear, it tries to pull another question
- */
