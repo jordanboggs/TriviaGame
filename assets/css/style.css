@@ -21,9 +21,9 @@
 }
 
 #answers div:hover, .hovered {
-  background-color: #5ce;
+  background-color: #008BB2;
 }
 
 #answers div:active {
-  background-color: #f67;
+  background-color: #5ce;
 }
