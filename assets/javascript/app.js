@@ -3,6 +3,8 @@
  * Jordan Boggs - Dec, 2017 
  */
 $(document).ready(function() {
+  var acceptInput = false;
+
   var game = {
     time: 30,
   
@@ -17,6 +19,9 @@ $(document).ready(function() {
     intervalId: "",
   
     start: function() {
+      // Accept input
+      acceptInput = true;
+
       // Start the timer
       game.time = 30;
       $("#timer").text(game.timeConverter(game.time));
@@ -177,6 +182,7 @@ $(document).ready(function() {
           }
         }, 4000);
       }
+      acceptInput = false;
     }, // End game.check()
   
     questionBank: {
@@ -338,8 +344,28 @@ $(document).ready(function() {
   });
   
   // Wait for a selection from user
-  $("#answer-a").click(function(){game.check("A")});
-  $("#answer-b").click(function(){game.check("B")});
-  $("#answer-c").click(function(){game.check("C")});
-  $("#answer-d").click(function(){game.check("D")});  
+  $("#answer-a").click(function(){
+    // validate that user SHOULD be giving an input
+    if (acceptInput) {
+      game.check("A");      
+    }
+  });
+  $("#answer-b").click(function(){
+    // validate that user SHOULD be giving an input
+    if (acceptInput) {
+      game.check("B");      
+    }
+  });
+  $("#answer-c").click(function(){
+    // validate that user SHOULD be giving an input
+    if (acceptInput) {
+      game.check("C");      
+    }
+  });
+  $("#answer-d").click(function(){
+    // validate that user SHOULD be giving an input
+    if (acceptInput) {
+      game.check("D");      
+    }
+  });
 });
