@@ -97,7 +97,7 @@ var game = {
     }
     
     // Update score
-    game.correctAnswers++;
+    game.incorrectAnswers++;
     game.answeredQuestions++;
   }, // End game.timeOut()
 
