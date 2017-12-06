@@ -2,8 +2,18 @@ body {
   font-family: 'Rambla', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: 'Rambla', sans-serif;
+  color: #5ce;
+}
+
+h1 {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  text-transform: uppercase;    
+}
+
+#timer {
+  color: #CCBE14;
 }
 
 #gameboard {
