@@ -14,40 +14,31 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="nav navbar-default">
-    <div class="container-fluid">
-      <div class="header">
-        <h1 class="navbar-brand">Star Trek Trivia</h1>
+  <div class="container">
+    <div class="row">
+      <img id="logo" class="img-responsive center-block" src="./assets/images/logo.svg.png" alt="Star Trek: The Next Generation" />
+      <h1 class="text-center">The Trivia Game</h1>
+    </div>
+    <div id="start-screen" class="row">
+      <div class="jumbotron">
+        <p>You will have 30 seconds per question. If you run out of time before you answer, it counts as a wrong answer.</p>
+        <button id="start" class="btn btn-info btn-lg">Start!</button>  
       </div>
     </div>
-  </nav>
-  <div class="container">
-      <div id="start-screen" class="row">
-        <div class="jumbotron">
-          <h1>Star Trek Trivia!</h1>
-          <p>You will have 30 seconds per question. If you run out of time before you answer, it counts as a wrong answer.</p>
-          <button id="start" class="btn btn-info btn-lg">Start!</button>  
-        </div>
+    <div id="gameboard" class="row">
+      <div class="row">
+        <h2 id="timer" class="text-center">00:30</h2>
       </div>
-      <div id="gameboard" class="row">
-        <div class="row">
-          <div class="col-lg-4 col-lg-offset-4">
-            <h1 class="">Star Trek Trivia</h1>
-          </div>      
-        </div>
-        <div class="row">
-          <h2 id="timer" class="col-lg-4 col-lg-offset-4">00:30</h2>
-        </div>
-        <div class="row">
-          <section id="question" class="col-lg-8 col-lg-offset-2"></section>
-          <section id="answers" class="col-lg-8 col-lg-offset-2">
-            <div id="answer-a"></div>
-            <div id="answer-b"></div>
-            <div id="answer-c"></div>
-            <div id="answer-d"></div>
-          </section>
-        </div>
+      <div class="row">
+        <section id="question" class="col-lg-8 col-lg-offset-2"></section>
+        <section id="answers" class="col-lg-8 col-lg-offset-2">
+          <div id="answer-a"></div>
+          <div id="answer-b"></div>
+          <div id="answer-c"></div>
+          <div id="answer-d"></div>
+        </section>
       </div>
+    </div>
   </div>
   <script src="./assets/javascript/app.js"></script>
 </body>

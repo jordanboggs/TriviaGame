@@ -1,5 +1,6 @@
 body {
   font-family: 'Rambla', sans-serif;
+  font-size: 16px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -10,10 +11,17 @@ h2, h3, h4, h5, h6 {
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   text-transform: uppercase;    
+  color: #B2A609;
+  font-size: 2em;
+}
+
+#logo {
+  max-height: 200px;
 }
 
 #timer {
-  color: #CCBE14;
+  color: #B2A609;
+  font-size: 3em;
 }
 
 #gameboard {
@@ -39,7 +47,7 @@ h1 {
 }
 
 #answers div:hover, .hovered {
-  background-color: #008BB2;
+  background-color: #128FB2;
 }
 
 #answers div:active {
