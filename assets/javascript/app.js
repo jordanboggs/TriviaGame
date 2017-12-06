@@ -94,9 +94,10 @@ $(document).ready(function() {
   
     timeOut: function() {
       // Time's up message
-      $("#feedback").html("<h2>Time's up!</h2>" +
-      "<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"] + 
-      "</h2><br/><img class='center-block img-responsive' src='./assets/images/b4.gif'/>");
+      $("#feedback").html("<h3>Time's up! " +
+      game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["feedback"] + 
+      "</h3><br/><img class='center-block img-responsive' src='./assets/images/b4.gif'/>");
       
       // Highlight the correct answer
       let arr = ['A', 'B', 'C', 'D'];
