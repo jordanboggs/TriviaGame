@@ -3,16 +3,28 @@ body {
   font-size: 24px;
 }
 
+.container {
+  margin-top: 3vh;
+}
+
 h2, h3, h4, h5, h6 {
   font-family: 'Rambla', sans-serif;
-  color: #159BDC;
+  background-color: #159BDC;
+  border-radius: 15px;
+  padding: 5px 15px;
 }
 
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   text-transform: uppercase;    
-  color: #7A8CF6;
+  background-color: #7A8CF6;
   font-size: 2em;
+  border-radius: 15px;
+}
+
+#start {
+  border-radius: 15px;
+  background-color: #159BDC;
 }
 
 #logo {
@@ -20,7 +32,7 @@ h1 {
 }
 
 #timer {
-  color: #AAA511;
+  background-color: #AAA511;
   font-size: 3em;
 }
 
@@ -32,14 +44,18 @@ h1 {
   font-weight: bold;  
 }
 
+#question 
+
 #question img {
   max-width: 240px;
 }
 
 #answers div {
   margin: 10px;
-  padding: 5px;
+  padding: 5px 15px;
   border: solid 1px #ccc;
+  border-radius: 15px;
+  background-color: #159BDC;  
 }
 
 #answers div:hover, .hovered {
