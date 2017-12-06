@@ -306,12 +306,12 @@ $(document).ready(function() {
     end: function() {
       $("#timer").hide();
       $("#answers").hide();
-      $("#feedback").hide();
+      $("#feedback").html("");
 
       // Embed a video
       if (game.correctAnswers > game.incorrectAnswers) {
-        $("#question").html("<h2>Here's how you did!</h2>" + 
-        "<p>Correct answers: " + game.correctAnswers + "</p>" +
+        $("#feedback").html("<h2>Here's how you did!</h2>");
+        $("#question").html("<p>Correct answers: " + game.correctAnswers + "</p>" +
         "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
         '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
         '<p><button id="restart" class="btn btn-lg">Play again!</button></p>');
