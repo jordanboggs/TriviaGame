@@ -22,11 +22,14 @@ $(document).ready(function() {
       // Accept input
       acceptInput = true;
 
+      // Clear feedback
+      $("#feedback").html("");
+
       // Start the timer
       game.time = 30;
       $("#timer").text(game.timeConverter(game.time));
       game.intervalId = setInterval(game.count, 1000);
-  
+      
       // Display the question and answers, if there are still
       // questions left
       game.displayQuestion();
@@ -91,7 +94,7 @@ $(document).ready(function() {
   
     timeOut: function() {
       // Time's up message
-      $("#question").html("<h2>Time's up!</h2><br/><img src='./assets/images/b4.gif'/><br/>" +
+      $("#feedback").html("<h2>Time's up!</h2><br/><img class='center-block img-responsive' src='./assets/images/b4.gif'/><br/>" +
       "<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"] + '</h2>');
       
       // Highlight the correct answer
@@ -127,7 +130,7 @@ $(document).ready(function() {
       // if answer is correct
       if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + pick]["correct"] === true) {
         // Display feedback
-        $("#question").html("<h2>Correct!</h2><br/><img src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
+        $("#feedback").html("<h2>Correct!</h2><br/><img class='center-block img-responsive' src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
   
         // Update score
         game.correctAnswers++;
@@ -147,8 +150,8 @@ $(document).ready(function() {
       } 
       else {
         // Display feedback
-        $("#question").html("<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]
-          + '</h2><br/><img src="./assets/images/facepalm.gif"/>');
+        $("#feedback").html("<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]
+          + '</h2><br/><img class="center-block img-responsive" src="./assets/images/facepalm.gif"/>');
   
         // Highlight the correct answer
         let arr = ['A', 'B', 'C', 'D'];
@@ -302,21 +305,22 @@ $(document).ready(function() {
     end: function() {
       $("#timer").hide();
       $("#answers").hide();
-      
+      $("#feedback").hide();
+
       // Embed a video
       if (game.correctAnswers > game.incorrectAnswers) {
         $("#question").html("<h2>Here's how you did!</h2>" + 
         "<p>Correct answers: " + game.correctAnswers + "</p>" +
         "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
         '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
-        '<p><button id="restart" class="btn btn-info btn-lg">Play again!</button></p>');
+        '<p><button id="restart" class="btn btn-lg">Play again!</button></p>');
       }
       else {
         $("#question").html("<h2>Here's how you did!</h2>" + 
         "<p>Correct answers: " + game.correctAnswers + "</p>" +
         "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
         '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
-        '<p><button id="restart" class="btn btn-info btn-lg">Play again!</button></p>');
+        '<p><button id="restart" class="btn btn-lg">Play again!</button></p>');
       }
   
       $("#restart").click(function() {
