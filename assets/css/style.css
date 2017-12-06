@@ -44,10 +44,14 @@ h1 {
   font-weight: bold;  
 }
 
-#question 
+#question d
 
 #question img {
   max-width: 240px;
+}
+
+#answers {
+  margin-top: 3vh;
 }
 
 #answers div {
