@@ -1,35 +1,31 @@
 body {
   font-family: 'Rambla', sans-serif;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: 'Rambla', sans-serif;
-  color: #5ce;
+  color: #159BDC;
 }
 
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   text-transform: uppercase;    
-  color: #B2A609;
+  color: #7A8CF6;
   font-size: 2em;
 }
 
 #logo {
-  max-height: 200px;
+  max-height: 150px;
 }
 
 #timer {
-  color: #B2A609;
+  color: #AAA511;
   font-size: 3em;
 }
 
 #gameboard {
   display: none;
-}
-
-#gameboard {
-  font-size: 18px;
 }
 
 #question {
@@ -47,9 +43,9 @@ h1 {
 }
 
 #answers div:hover, .hovered {
-  background-color: #128FB2;
+  background-color: #0E6590;
 }
 
 #answers div:active {
-  background-color: #5ce;
+  background-color: #159BDC;
 }
