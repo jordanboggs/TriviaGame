@@ -56,7 +56,8 @@ $(document).ready(function() {
           // Reset highlight
           let arr = ['A', 'B', 'C', 'D'];
           for (let i = 0; i < 4; i++) {
-            if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+            if (game["questionBank"]["question" + 
+            game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
               $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
             }
           }
@@ -97,12 +98,14 @@ $(document).ready(function() {
       $("#feedback").html("<h3>Time's up! " +
       game["questionBank"]["question" + 
       game.questionBank.currentQuestion]["feedback"] + 
-      "</h3><br/><img class='center-block img-responsive' src='./assets/images/b4.gif'/>");
+      "</h3><br/><img class='center-block img-responsive' " +
+      "src='./assets/images/b4.gif'/>");
       
       // Highlight the correct answer
       let arr = ['A', 'B', 'C', 'D'];
       for (let i = 0; i < 4; i++) {
-        if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+        if (game["questionBank"]["question" + 
+        game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
           $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered")
         }
       }
@@ -115,24 +118,33 @@ $(document).ready(function() {
     displayQuestion: function() {
       // Display the question based on what the currentQuestion
       // counter is
-      $("#question").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["text"]);
+      $("#question").text(game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["text"]);
   
-      $("#answer-a").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerA"]["text"]);
+      $("#answer-a").text(game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["answerA"]["text"]);
   
-      $("#answer-b").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerB"]["text"]);
+      $("#answer-b").text(game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["answerB"]["text"]);
   
-      $("#answer-c").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerC"]["text"]);
+      $("#answer-c").text(game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["answerC"]["text"]);
   
-      $("#answer-d").text(game["questionBank"]["question" + game.questionBank.currentQuestion]["answerD"]["text"]);
+      $("#answer-d").text(game["questionBank"]["question" + 
+      game.questionBank.currentQuestion]["answerD"]["text"]);
     }, // End game.displayQuestion()
   
     check: function(pick) {
       clearInterval(game.intervalId);
   
       // if answer is correct
-      if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + pick]["correct"] === true) {
+      if (game["questionBank"]["question" + game.questionBank.currentQuestion]
+      ["answer" + pick]["correct"] === true) {
         // Display feedback
-        $("#feedback").html("<h2>Correct!</h2><br/><img class='center-block img-responsive' src='" + game["questionBank"]["question" + game.questionBank.currentQuestion]["gif"] + "'/>");
+        $("#feedback").html("<h2>Correct!</h2><br/>"+
+        "<img class='center-block img-responsive' src='" + 
+        game["questionBank"]["question" + game.questionBank.currentQuestion]
+        ["gif"] + "'/>");
   
         // Update score
         game.correctAnswers++;
@@ -152,13 +164,16 @@ $(document).ready(function() {
       } 
       else {
         // Display feedback
-        $("#feedback").html("<h2>" + game["questionBank"]["question" + game.questionBank.currentQuestion]["feedback"]
-          + '</h2><br/><img class="center-block img-responsive" src="./assets/images/facepalm.gif"/>');
+        $("#feedback").html("<h2>" + game["questionBank"]["question" + 
+        game.questionBank.currentQuestion]["feedback"]
+          + '</h2><br/><img class="center-block img-responsive"' +
+          ' src="./assets/images/facepalm.gif"/>');
   
         // Highlight the correct answer
         let arr = ['A', 'B', 'C', 'D'];
         for (let i = 0; i < 4; i++) {
-          if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+          if (game["questionBank"]["question" + 
+          game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
             $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
           }
         }
@@ -167,7 +182,8 @@ $(document).ready(function() {
           // reset highlighted answer
           let arr = ['A', 'B', 'C', 'D'];
           for (let i = 0; i < 4; i++) {
-            if (game["questionBank"]["question" + game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
+            if (game["questionBank"]["question" + 
+            game.questionBank.currentQuestion]["answer" + arr[i]]["correct"]) {
               $("#answer-" + arr[i].toLowerCase()).toggleClass("hovered");
             }
           }
@@ -238,7 +254,8 @@ $(document).ready(function() {
       },
   
       question3: {
-        text: "Which character has appeared in the most Star Trek episodes, across all series?",
+        text: "Which character has appeared in the most Star Trek episodes," + 
+        " across all series?",
         answerA: {
           text: "Chief O'Brien",
           correct: false
@@ -260,7 +277,8 @@ $(document).ready(function() {
       },
   
       question4: {
-        text: "What is the name of the god-like being who first antagonizes the crew in the first episode of Star Trek: The Next Generation?",
+        text: "What is the name of the god-like being who first antagonizes" +
+        " the crew in the first episode of Star Trek: The Next Generation?",
         answerA: {
           text: "Q",
           correct: true
@@ -282,7 +300,8 @@ $(document).ready(function() {
       },
   
       question5: {
-        text: "What is the name of the room on the Enterprise that allows crewmembers to simulate different environments in 3D space?",
+        text: "What is the name of the room on the Enterprise that allows" + 
+        " crewmembers to simulate different environments in 3D space?",
         answerA: {
           text: "The Occulus",
           correct: false
@@ -312,17 +331,23 @@ $(document).ready(function() {
       // Embed a video
       if (game.correctAnswers > game.incorrectAnswers) {
         $("#feedback").html("<h2>Here's how you did!</h2>");
-        $("#question").html("<p>Correct answers: " + game.correctAnswers + "</p>" +
-        "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
-        '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
-        '<p><button id="restart" class="btn btn-lg">Play again!</button></p>');
+        $("#question").html("<p>Correct answers: " + game.correctAnswers + 
+        "</p>" + "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
+        '<iframe width="560" height="315"' +
+        ' src="https://www.youtube-nocookie.com/embed/' +
+        'PiyZEbGSHnY?rel=0&amp;showinfo=0" frameborder="0"' + 
+        ' allowfullscreen></iframe>' + '<p><button id="restart" ' + 
+        'class="btn btn-lg">Play again!</button></p>');
       }
       else {
         $("#question").html("<h2>Here's how you did!</h2>" + 
         "<p>Correct answers: " + game.correctAnswers + "</p>" +
         "<p>Incorrect answers: " + game.incorrectAnswers + "</p>" +
-        '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>' + 
-        '<p><button id="restart" class="btn btn-lg">Play again!</button></p>');
+        '<iframe width="560" height="315" ' +
+        'src="https://www.youtube-nocookie.com/embed/' + 
+        '29-iFOEOgIM?rel=0&amp;showinfo=0" frameborder="0" ' + 
+        'allowfullscreen></iframe>' + '<p><button id="restart" ' + 
+        'class="btn btn-lg">Play again!</button></p>');
       }
   
       $("#restart").click(function() {
